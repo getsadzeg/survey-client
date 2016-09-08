@@ -8,6 +8,18 @@ public class Survey {
     private String Middle_Name;
     private int members;
 
+    public Survey() {
+
+    }
+
+    public Survey(int id, String Name, String Surname, String Middle_Name, int members) {
+        this.id = id;
+        this.Name = Name;
+        this.Surname = Surname;
+        this.Middle_Name = Middle_Name;
+        this.members = members;
+    }
+
     public int getId() {
         return id;
     }
