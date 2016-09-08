@@ -1,8 +1,8 @@
 package pi.survey.model;
 
+import com.google.gson.Gson;
 
 public class Survey {
-    private int id;
     private String Name;
     private String Surname;
     private String Middle_Name;
@@ -12,16 +12,11 @@ public class Survey {
 
     }
 
-    public Survey(int id, String Name, String Surname, String Middle_Name, int members) {
-        this.id = id;
+    public Survey(String Name, String Surname, String Middle_Name, int members) {
         this.Name = Name;
         this.Surname = Surname;
         this.Middle_Name = Middle_Name;
         this.members = members;
-    }
-
-    public int getId() {
-        return id;
     }
 
 
@@ -55,5 +50,10 @@ public class Survey {
 
     public void setMembers(int members) {
         this.members = members;
+    }
+
+    public String returnJSON() {
+        Gson gson = new Gson();
+        return gson.toJson(new Survey(getName(), getSurname(), getMiddle_Name(), getMembers()));
     }
 }
