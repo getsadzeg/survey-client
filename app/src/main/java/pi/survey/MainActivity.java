@@ -30,12 +30,14 @@ public class MainActivity extends AppCompatActivity {
         surname = (EditText) findViewById(R.id.editText2);
         middle_name = (EditText) findViewById(R.id.editText3);
         members = (EditText) findViewById(R.id.editText4);
-        survey = new Survey(name.getText().toString(), surname.getText().toString(),
-                middle_name.getText().toString(), Integer.parseInt(members.getText().toString()));
+
 
 
     }
     public void submitOnClick(View v) {
+        int int_members = Integer.parseInt(members.getText().toString());
+        survey = new Survey(name.getText().toString(), surname.getText().toString(),
+                middle_name.getText().toString(), int_members );
         ss = ServiceGenerator.createService(SurveyServices.class, this);
         ss.submit(survey.returnJSON(), new Callback<submitResponse>() {
             @Override
