@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Survey</string>
+    <string name="error_msg">You typed members incorrectly.</string>
 </resources>

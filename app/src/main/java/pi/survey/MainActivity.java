@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         middle_name = (EditText) findViewById(R.id.editText3);
         members = (EditText) findViewById(R.id.editText4);
 
+
     }
 
     public static void verifyStoragePermissions(Activity activity) {
