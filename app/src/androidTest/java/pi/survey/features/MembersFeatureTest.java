@@ -21,6 +21,7 @@ public class MembersFeatureTest extends GreenCoffeeTest {
     @Rule
     public ActivityTestRule<MainActivity> activity = new ActivityTestRule<>(MainActivity.class);
 
+
     public MembersFeatureTest(Scenario scenario) {
         super(scenario);
     }
