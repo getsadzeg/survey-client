@@ -25,12 +25,6 @@ public class MembersFeatureTest extends GreenCoffeeTest {
         super(scenario);
     }
 
-    
-
-
-
-
-
     @Parameterized.Parameters
     public static Iterable<Scenario> scenarios() throws IOException {
         return new GreenCoffeeConfig()
