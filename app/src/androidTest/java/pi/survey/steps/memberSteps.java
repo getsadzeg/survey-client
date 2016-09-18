@@ -1,6 +1,8 @@
 package pi.survey.steps;
 
 
+import android.support.test.espresso.action.ViewActions;
+
 import com.mauriciotogneri.greencoffee.GreenCoffeeSteps;
 import com.mauriciotogneri.greencoffee.annotations.And;
 import com.mauriciotogneri.greencoffee.annotations.Given;
@@ -20,6 +22,8 @@ public class memberSteps extends GreenCoffeeSteps {
     @When("^I introduce an invalid members$")
     public void introduceInvalidMembers() {
         onViewWithId(R.id.editText4).type("3.14");
+        ViewActions.closeSoftKeyboard();
+        //onViewWithId(R.id.editText4).scrollTo().click();
     }
     @And("^I press the login button$")
     public void IpressTheLoginButton() {
