@@ -20,8 +20,7 @@ public class memberSteps extends GreenCoffeeSteps {
     }
     @When("^I introduce an invalid members$")
     public void introduceInvalidMembers() {
-        onViewWithId(R.id.editText4).type("3.14");
-        onViewWithId(R.id.button).scrollTo();
+        onViewWithId(R.id.editText4).type("50");
         Espresso.closeSoftKeyboard();
         //onViewWithId(R.id.editText4).scrollTo().click();
     }

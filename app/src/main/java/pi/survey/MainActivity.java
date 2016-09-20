@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
 
-
 import pi.survey.model.Survey;
 import pi.survey.services.ServiceGenerator;
 import pi.survey.services.SurveyServices;
@@ -24,9 +23,11 @@ public class MainActivity extends AppCompatActivity {
     EditText surname;
     EditText middle_name;
     EditText members;
+    int int_members;
     Survey survey = null;
     SurveyServices ss;
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
+    private static final String TAG = "MyActivity";
     private static String[] PERMISSIONS_STORAGE = {
             Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE
@@ -89,7 +90,12 @@ public class MainActivity extends AppCompatActivity {
 
     public void submitOnClick(View v) {
         verifyStoragePermissions(this);
-        int int_members = Integer.parseInt(members.getText().toString());
+        if(members.getText().toString().matches("[0-9]+"))
+        int_members = Integer.parseInt(members.getText().toString());
+        else {
+            int_members = 0; //temporary. will throw exception in the future
+            android.util.Log.e(TAG, "Members should be provided!");
+        }
         survey = new Survey(name.getText().toString(), surname.getText().toString(),
                 middle_name.getText().toString(), int_members );
         ss = returnService();
