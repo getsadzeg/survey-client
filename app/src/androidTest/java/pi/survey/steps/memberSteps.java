@@ -32,6 +32,6 @@ public class memberSteps extends GreenCoffeeSteps {
     }
     @Then("^I see an error message saying 'Invalid members'$")
     public void anErrorMessage() {
-        onViewWithText(R.string.error_msg);
+        onViewWithText(R.string.error_msg).isDisplayed();
     }
 }
